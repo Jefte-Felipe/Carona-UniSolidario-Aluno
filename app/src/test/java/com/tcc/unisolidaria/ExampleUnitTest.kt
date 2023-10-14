@@ -1,4 +1,4 @@
-package com.optic.unisolidaria
+package com.tcc.unisolidaria
 
 import org.junit.Test
 
