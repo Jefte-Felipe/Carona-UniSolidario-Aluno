@@ -1,0 +1,76 @@
+{
+  "project_info": {
+    "project_number": "537721565294",
+    "project_id": "unisolidaria-a10d4",
+    "storage_bucket": "unisolidaria-a10d4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:537721565294:android:a0c2ae5348a345da7d767f",
+        "android_client_info": {
+          "package_name": "com.tcc.unisolidaria"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "537721565294-ek54b3ovi0ob0bllh1g0onf9i1hrk52u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDloToQ9QFZtC-ZoOeRm1FIafWJM8n4SU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "537721565294-ek54b3ovi0ob0bllh1g0onf9i1hrk52u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:537721565294:android:5e9532248118077e7d767f",
+        "android_client_info": {
+          "package_name": "com.tcc.unisolidariamotorista"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "537721565294-39lpopgu3i3e19k1jef8qqu97jcen2es.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tcc.unisolidariamotorista",
+            "certificate_hash": "642d43ae2f01e7b63e8819242852e96bc1c13782"
+          }
+        },
+        {
+          "client_id": "537721565294-ek54b3ovi0ob0bllh1g0onf9i1hrk52u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDloToQ9QFZtC-ZoOeRm1FIafWJM8n4SU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "537721565294-ek54b3ovi0ob0bllh1g0onf9i1hrk52u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

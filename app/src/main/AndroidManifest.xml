@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.tcc.unisolidaria">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/ic_taxi_logo"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/ic_taxi_logo"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.unisolidaria"
+        tools:targetApi="31">
+        <activity
+            android:name="com.tcc.unisolidaria.activities.HistoriesDetailActivity"
+            android:exported="false"
+            />
+        <activity
+            android:name="com.tcc.unisolidaria.activities.HistoriesActivity"
+            android:exported="false"
+            android:parentActivityName="com.tcc.unisolidaria.activities.MapActivity"/>
+        <activity
+            android:name="com.tcc.unisolidaria.activities.ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.tcc.unisolidaria.activities.CalificationActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.tcc.unisolidaria.activities.MapTripActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.tcc.unisolidaria.activities.SearchActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.tcc.unisolidaria.activities.TripInfoActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.tcc.unisolidaria.activities.MapActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.tcc.unisolidaria.activities.RegisterActivity"
+            android:exported="false" />
+
+        <activity
+            android:name="com.tcc.unisolidaria.activities.LoginActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.tcc.unisolidaria.activities.SplashScreenActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyB0D8-P6-bJ6QqvFXZHXMRWknbTO6K5GgI"/>
+
+        <service
+            android:name=".services.MyFirebaseMessagingClient"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="@string/default_notification_channel_id" />
+
+    </application>
+
+</manifest>

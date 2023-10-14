@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F2F2F2"
+    tools:context=".activities.ProfileActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/green" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="PERFIL DE USUARIO"
+            android:textAlignment="center"
+            android:textColor="@color/grey_dark"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imageViewBack"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/ic_back" />
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/circleImageProfile"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="bottom|center"
+            android:layout_marginBottom="45dp"
+            android:src="@drawable/ic_person"
+            app:civ_border_color="@color/white"
+            app:civ_border_width="3dp" />
+
+
+        <TextView
+            android:id="@+id/textViewEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:text="E-mail"
+            android:textColor="@color/grey_dark"
+            android:textSize="16sp"
+            android:textStyle="italic" />
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="250dp"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/EditTextGrey"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="30dp"
+            app:hintTextColor="@color/grey_dark"
+            app:startIconDrawable="@drawable/ic_little_person"
+            app:startIconTint="@color/grey_dark">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textFieldName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nome"
+                android:inputType="text"
+                android:textColor="@color/grey_dark"
+                android:textColorHint="@color/grey_dark"
+                android:textSize="13sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/EditTextGrey"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="30dp"
+            app:hintTextColor="@color/grey_dark"
+            app:startIconDrawable="@drawable/ic_little_person_outline"
+            app:startIconTint="@color/grey_dark">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textFieldLastname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Sobrenome"
+                android:inputType="text"
+                android:textColor="@color/grey_dark"
+                android:textColorHint="@color/grey_dark"
+                android:textSize="13sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/EditTextGrey"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="30dp"
+            app:hintTextColor="@color/grey_dark"
+            app:startIconDrawable="@drawable/ic_phone_white"
+            app:startIconTint="@color/grey_dark">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textFieldPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Telefone"
+                android:inputType="phone"
+                android:textColor="@color/grey_dark"
+                android:textColorHint="@color/grey_dark"
+                android:textSize="13sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnUpdate"
+        style="@android:style/Widget.Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
+        android:textColor="@color/white"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/button_background"
+        android:text="ATUALIZAR INFORMAÇÃO" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
