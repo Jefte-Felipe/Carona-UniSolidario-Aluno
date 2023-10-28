@@ -6,14 +6,14 @@ import android.util.Log
 import android.view.WindowManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.tcc.unisolidaria.databinding.ActivityCalificationBinding
+import com.tcc.unisolidaria.databinding.ActivityQualificationBinding
 import com.tcc.unisolidaria.models.History
 import com.tcc.unisolidaria.providers.HistoryProvider
 
 
-class CalificationActivity : AppCompatActivity() {
+class QualificationActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityCalificationBinding
+    private lateinit var binding: ActivityQualificationBinding
     private var historyProvider = HistoryProvider()
     private var calification = 0f
     private var history: History? = null
@@ -21,7 +21,7 @@ class CalificationActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityCalificationBinding.inflate(layoutInflater)
+        binding = ActivityQualificationBinding.inflate(layoutInflater)
         setContentView(binding.root)
         window.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS)
 
@@ -47,7 +47,7 @@ class CalificationActivity : AppCompatActivity() {
                 goToMap()
             }
             else {
-                Toast.makeText(this@CalificationActivity, "Erro ao atualizar a qualificação", Toast.LENGTH_LONG).show()
+                Toast.makeText(this@QualificationActivity, "Erro ao atualizar a qualificação", Toast.LENGTH_LONG).show()
             }
         }
     }
@@ -71,7 +71,7 @@ class CalificationActivity : AppCompatActivity() {
                     binding.textViewPrice.text = "${String.format("%.1f", history?.price)}$"
                     binding.textViewTimeAndDistance.text = "${history?.time} Min - ${String.format("%.1f", history?.km)} Km"
 
-                    Log.d("FIRESTORE", "hISTORIAL: ${history?.toJson()}")
+                    Log.d("FIRESTORE", "HISTORIAL: ${history?.toJson()}")
                 }
                 else {
                     Toast.makeText(this, "Não vejo o histórico", Toast.LENGTH_LONG).show()

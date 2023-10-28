@@ -12,7 +12,7 @@ import androidx.core.app.NotificationCompat
 import com.tcc.unisolidaria.R
 
 
-class NotificationHelper(base: Context): ContextWrapper(base) {
+class NotificationHelper(base: Context) : ContextWrapper(base) {
 
     private val CHANNEL_ID = "com.tcc.unisolidaria"
     private val CHANNEL_NAME = "Carona UniSolidaria"
@@ -55,5 +55,4 @@ class NotificationHelper(base: Context): ContextWrapper(base) {
             .setSmallIcon(R.drawable.ic_taxi_logo)
             .setStyle(NotificationCompat.BigTextStyle().bigText(body).setBigContentTitle(title))
     }
-
 }

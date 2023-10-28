@@ -31,7 +31,7 @@
             android:name="com.tcc.unisolidaria.activities.ProfileActivity"
             android:exported="false" />
         <activity
-            android:name="com.tcc.unisolidaria.activities.CalificationActivity"
+            android:name="com.tcc.unisolidaria.activities.QualificationActivity"
             android:exported="false" />
         <activity
             android:name="com.tcc.unisolidaria.activities.MapTripActivity"
