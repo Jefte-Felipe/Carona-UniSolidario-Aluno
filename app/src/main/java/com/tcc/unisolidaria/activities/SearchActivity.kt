@@ -47,7 +47,9 @@ class SearchActivity : AppCompatActivity() {
 
 
     // PESQUISA DE MOTORISTA
-    private var radius = 0.2
+
+    //Teste aumentar distancia da corrida
+    private var radius = 0.9
     private var idDriver = ""
     private var driver: Driver? = null
     private var isDriverFound = false
