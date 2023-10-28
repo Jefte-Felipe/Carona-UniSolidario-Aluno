@@ -15,7 +15,7 @@ class QualificationActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityQualificationBinding
     private var historyProvider = HistoryProvider()
-    private var calification = 0f
+    private var qualification = 0f
     private var history: History? = null
 
 
@@ -26,7 +26,7 @@ class QualificationActivity : AppCompatActivity() {
         window.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS)
 
         binding.ratingBar.setOnRatingBarChangeListener { ratingBar, value, b ->
-            calification = value
+            qualification = value
         }
 
         binding.btnCalification.setOnClickListener {
@@ -42,7 +42,7 @@ class QualificationActivity : AppCompatActivity() {
     }
 
     private fun updateCalification(idDocument: String) {
-        historyProvider.updateCalificationToDriver(idDocument, calification).addOnCompleteListener {
+        historyProvider.updateCalificationToDriver(idDocument, qualification).addOnCompleteListener {
             if (it.isSuccessful) {
                 goToMap()
             }
