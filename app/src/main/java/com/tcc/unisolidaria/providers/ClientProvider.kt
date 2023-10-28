@@ -44,7 +44,7 @@ class ClientProvider {
     fun createToken(idClient: String) {
         FirebaseMessaging.getInstance().token.addOnCompleteListener {
             if (it.isSuccessful) {
-                val token = it.result // TOKEN DE NOTIFICACIONES
+                val token = it.result // TOKEN DE NOTIFICAÇÃO
                 updateToken(idClient, token)
             }
         }
