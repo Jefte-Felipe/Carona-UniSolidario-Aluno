@@ -8,22 +8,22 @@
     tools:context=".activities.LoginActivity">
 
 
-
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/imgCircleEnd"
         android:layout_width="250dp"
-        android:layout_height="400dp"
+        android:layout_height="700dp"
+        android:rotation="360"
         android:scaleType="fitXY"
         android:translationY="40dp"
-        android:rotation="360"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/imgCircleBottom"
         app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintStart_toEndOf="@id/imgCircleBottom"
-    app:srcCompat="@drawable/ic_circle_end" />
+        app:srcCompat="@drawable/ic_circle_end" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/imgCircleBottom"
         android:layout_width="250dp"
-        android:layout_height="313dp"
+        android:layout_height="300dp"
         android:rotation="180"
         android:scaleType="fitXY"
         app:layout_constraintStart_toStartOf="parent"

@@ -10,12 +10,15 @@ import com.tcc.unisolidaria.databinding.ActivityRegisterBinding
 import com.tcc.unisolidaria.models.Client
 import com.tcc.unisolidaria.providers.AuthProvider
 import com.tcc.unisolidaria.providers.ClientProvider
+import com.tcc.unisolidaria.utils.CircleAnimationUtil
 
 class RegisterActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityRegisterBinding
     private val authProvider = AuthProvider()
     private val clientProvider = ClientProvider()
+
+    private var circleAnimationUtil: CircleAnimationUtil? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,6 +28,13 @@ class RegisterActivity : AppCompatActivity() {
         window.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS)
 
         binding.btnRegister.setOnClickListener { register() }
+        startCirclesAnimation()
+    }
+
+    private fun startCirclesAnimation() {
+        val circles = listOf(binding.imgCircleEnd, binding.imgCircleBottom)
+        circleAnimationUtil = CircleAnimationUtil(circles)
+        circleAnimationUtil?.start()
     }
     
     private fun register() {
@@ -116,9 +126,9 @@ class RegisterActivity : AppCompatActivity() {
         return true
         
     }
-    
-    private fun goToLogin() {
-        val i = Intent(this, LoginActivity::class.java)
-        startActivity(i)
+
+    override fun onDestroy() {
+        circleAnimationUtil?.cancel()
+        super.onDestroy()
     }
 }
