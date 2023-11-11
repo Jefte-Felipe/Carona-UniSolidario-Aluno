@@ -124,7 +124,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
-                android:text="E-mail"
+                android:text="E-mail institucional"
                 android:textColor="#000000"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -136,7 +136,7 @@
                 android:layout_marginTop="12dp"
                 android:background="@drawable/edittext_background"
                 android:ems="10"
-                android:hint="E-mail"
+                android:hint="NOME12345@unifatecpr.com.br"
                 android:inputType="textEmailAddress"
                 android:padding="12dp"
                 android:textColor="#707070"

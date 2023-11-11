@@ -67,7 +67,7 @@ class RegisterActivity : AppCompatActivity() {
                     }
                 }
                 else {
-                    Toast.makeText(this@RegisterActivity, "Falha na inscrição ${it.exception.toString()}", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this@RegisterActivity, "E-mail institucional inválido\n Digite novamente", Toast.LENGTH_LONG).show()
                     Log.d("FIREBASE", "Error: ${it.exception.toString()}")
                 }
             }
