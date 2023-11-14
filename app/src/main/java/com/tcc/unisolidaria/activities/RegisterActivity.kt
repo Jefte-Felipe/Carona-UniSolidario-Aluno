@@ -6,8 +6,12 @@ import android.util.Log
 import android.view.WindowManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.tcc.unisolidaria.R
 import com.tcc.unisolidaria.databinding.ActivityRegisterBinding
 import com.tcc.unisolidaria.models.Client
+import com.tcc.unisolidaria.models.QuestionAnswer
 import com.tcc.unisolidaria.providers.AuthProvider
 import com.tcc.unisolidaria.providers.ClientProvider
 import com.tcc.unisolidaria.utils.CircleAnimationUtil
@@ -25,7 +29,10 @@ class RegisterActivity : AppCompatActivity() {
 
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        window.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS)
+        window.setFlags(
+            WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+            WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
+        )
 
         binding.btnRegister.setOnClickListener { register() }
         startCirclesAnimation()
@@ -36,7 +43,8 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun lgpdData() {
-        val i = Intent(this, DataUserLGPDActivity::class.java)
+        val i = Intent(this, QuestionAnswerActivity::class.java)
+        i.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
         startActivity(i)
     }
 
@@ -45,7 +53,7 @@ class RegisterActivity : AppCompatActivity() {
         circleAnimationUtil = CircleAnimationUtil(circles)
         circleAnimationUtil?.start()
     }
-    
+
     private fun register() {
         val name = binding.textFieldName.text.toString()
         val lastname = binding.textFieldLastname.text.toString()
@@ -53,7 +61,7 @@ class RegisterActivity : AppCompatActivity() {
         val phone = binding.textFieldPhone.text.toString()
         val password = binding.textFieldPassword.text.toString()
         val confirmPassword = binding.textFieldConfirmPassword.text.toString()
-        
+
         if (isValidForm(name, lastname, email, phone, password, confirmPassword)) {
             authProvider.register(email, password).addOnCompleteListener {
                 if (it.isSuccessful) {
@@ -66,22 +74,32 @@ class RegisterActivity : AppCompatActivity() {
                     )
                     clientProvider.create(client).addOnCompleteListener {
                         if (it.isSuccessful) {
-                            Toast.makeText(this@RegisterActivity, "Registro bem-sucedido", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(
+                                this@RegisterActivity,
+                                "Registro bem-sucedido",
+                                Toast.LENGTH_SHORT
+                            ).show()
                             goToMap()
-                        }
-                        else {
-                            Toast.makeText(this@RegisterActivity, "Ocorreu um erro Dados do usuário armazenados ${it.exception.toString()}", Toast.LENGTH_SHORT).show()
+                        } else {
+                            Toast.makeText(
+                                this@RegisterActivity,
+                                "Ocorreu um erro Dados do usuário armazenados ${it.exception.toString()}",
+                                Toast.LENGTH_SHORT
+                            ).show()
                             Log.d("FIREBASE", "Error: ${it.exception.toString()}")
                         }
                     }
-                }
-                else {
-                    Toast.makeText(this@RegisterActivity, "E-mail institucional inválido\n Digite novamente", Toast.LENGTH_LONG).show()
+                } else {
+                    Toast.makeText(
+                        this@RegisterActivity,
+                        "E-mail institucional inválido\n Digite novamente",
+                        Toast.LENGTH_LONG
+                    ).show()
                     Log.d("FIREBASE", "Error: ${it.exception.toString()}")
                 }
             }
         }
-        
+
     }
 
     private fun goToMap() {
@@ -91,14 +109,14 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun isValidForm(
-        name: String, 
-        lastname: String, 
-        email: String, 
-        phone: String, 
-        password: String, 
+        name: String,
+        lastname: String,
+        email: String,
+        phone: String,
+        password: String,
         confirmPassword: String
     ): Boolean {
-        
+
         if (name.isEmpty()) {
             Toast.makeText(this, "Você deve inserir seu nome", Toast.LENGTH_SHORT).show()
             return false
@@ -120,7 +138,8 @@ class RegisterActivity : AppCompatActivity() {
             return false
         }
         if (confirmPassword.isEmpty()) {
-            Toast.makeText(this, "Você deve inserir a confirmação da senha", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Você deve inserir a confirmação da senha", Toast.LENGTH_SHORT)
+                .show()
             return false
         }
         if (password != confirmPassword) {
@@ -128,12 +147,13 @@ class RegisterActivity : AppCompatActivity() {
             return false
         }
         if (password.length < 6) {
-            Toast.makeText(this, "A senha deve ter pelo menos 6 caracteres", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "A senha deve ter pelo menos 6 caracteres", Toast.LENGTH_LONG)
+                .show()
             return false
         }
-        
+
         return true
-        
+
     }
 
     override fun onDestroy() {
