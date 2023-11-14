@@ -12,7 +12,6 @@ import com.google.firebase.storage.StorageTask
 import com.google.firebase.storage.UploadTask
 import com.tcc.unisolidaria.models.Client
 import java.io.File
-import java.util.concurrent.CompletableFuture
 
 class ClientProvider {
 
