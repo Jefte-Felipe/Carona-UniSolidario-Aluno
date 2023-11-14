@@ -12,6 +12,7 @@ import com.google.firebase.storage.StorageTask
 import com.google.firebase.storage.UploadTask
 import com.tcc.unisolidaria.models.Client
 import java.io.File
+import java.util.concurrent.CompletableFuture
 
 class ClientProvider {
 
@@ -58,12 +59,12 @@ class ClientProvider {
 
     fun update(client: Client): Task<Void> {
         val map: MutableMap<String, Any> = HashMap()
-        map["name"] = client?.name!!
-        map["lastname"] = client?.lastname!!
-        map["phone"] = client?.phone!!
-        map["image"] = client?.image!!
-        return db.document(client?.id!!).update(map)
+        client.name?.let { map["name"] = it }
+        client.lastname?.let { map["lastname"] = it }
+        client.phone?.let { map["phone"] = it }
+        client.image?.let { map["image"] = it }
+
+        return db.document(client.id!!).update(map)
+
     }
-
-
 }
