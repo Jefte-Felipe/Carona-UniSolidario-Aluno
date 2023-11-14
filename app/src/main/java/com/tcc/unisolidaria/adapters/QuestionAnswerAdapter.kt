@@ -1,4 +1,4 @@
-package com.tcc.unisolidaria.activities
+package com.tcc.unisolidaria.adapters
 
 import android.view.LayoutInflater
 import android.view.View

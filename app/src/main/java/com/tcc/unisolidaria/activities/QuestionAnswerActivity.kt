@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.tcc.unisolidaria.R
+import com.tcc.unisolidaria.adapters.QuestionAnswerAdapter
 import com.tcc.unisolidaria.databinding.ActivityQuestionAnswerBinding
 import com.tcc.unisolidaria.models.QuestionAnswer
 
