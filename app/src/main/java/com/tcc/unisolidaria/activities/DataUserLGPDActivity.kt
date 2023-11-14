@@ -12,7 +12,7 @@ import com.tcc.unisolidaria.providers.AuthProvider
 import com.tcc.unisolidaria.providers.ClientProvider
 import com.tcc.unisolidaria.utils.CircleAnimationUtil
 
-class RegisterActivity : AppCompatActivity() {
+class DataUserLGPDActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityRegisterBinding
     private val authProvider = AuthProvider()
@@ -66,17 +66,17 @@ class RegisterActivity : AppCompatActivity() {
                     )
                     clientProvider.create(client).addOnCompleteListener {
                         if (it.isSuccessful) {
-                            Toast.makeText(this@RegisterActivity, "Registro bem-sucedido", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this@DataUserLGPDActivity, "Registro bem-sucedido", Toast.LENGTH_SHORT).show()
                             goToMap()
                         }
                         else {
-                            Toast.makeText(this@RegisterActivity, "Ocorreu um erro Dados do usuário armazenados ${it.exception.toString()}", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this@DataUserLGPDActivity, "Ocorreu um erro Dados do usuário armazenados ${it.exception.toString()}", Toast.LENGTH_SHORT).show()
                             Log.d("FIREBASE", "Error: ${it.exception.toString()}")
                         }
                     }
                 }
                 else {
-                    Toast.makeText(this@RegisterActivity, "E-mail institucional inválido\n Digite novamente", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this@DataUserLGPDActivity, "E-mail institucional inválido\n Digite novamente", Toast.LENGTH_LONG).show()
                     Log.d("FIREBASE", "Error: ${it.exception.toString()}")
                 }
             }
