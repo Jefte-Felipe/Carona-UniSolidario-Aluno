@@ -28,7 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="25dp"
-            android:layout_marginTop="82dp"
+            android:layout_marginTop="60dp"
             android:text="Criar Conta"
             android:textColor="@color/green"
             android:textSize="30sp"

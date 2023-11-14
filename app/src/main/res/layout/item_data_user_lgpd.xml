@@ -11,12 +11,19 @@
         android:id="@+id/questionTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="18sp"
+        android:textSize="24sp"
+        android:textColor="@color/black"
+        android:gravity="center_vertical"
+        tools:text="Por que precisamos dos seus dados"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/answerTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:lineSpacingExtra="4dp"
+        android:layout_marginTop="4dp"
+        tools:text="Para usar na lgpd dddddddddddddddddddddddddddddddddddddddddfffffffffffffffffffffd"
         android:textSize="16sp" />
 </LinearLayout>

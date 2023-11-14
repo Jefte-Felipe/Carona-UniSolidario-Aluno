@@ -29,12 +29,16 @@ class QuestionAnswerActivity : AppCompatActivity() {
     private fun lgpdData() {
         val listaPerguntasRespostas = listOf(
             QuestionAnswer(
-                "O que é carona solidária?",
-                "A carona solidária é um sistema de transporte em que motoristas compartilham seus carros com outras pessoas que precisam da mesma rota."
+                "Por que Precisamos do seu Nome e Sobrenome?",
+                "Utilizamos seu nome e sobrenome para personalizar a experiência dentro do aplicativo. Isso ajuda a criar um ambiente mais amigável e confiável durante as interações entre motoristas e passageiros nas caronas solidárias."
             ),
             QuestionAnswer(
-                "Como posso ser um motorista?",
-                "Você pode se cadastrar como motorista no nosso aplicativo e oferecer caronas para outras pessoas."
+                "Por que Precisamos do seu Telefone?",
+                "Seu número de telefone é essencial para facilitar a comunicação entre os usuários durante a coordenação das caronas. Além disso, serve como uma camada adicional de segurança ao verificar a identidade dos participantes."
+            ),
+            QuestionAnswer(
+                "Por que Precisamos do seu E-mail Institucional?",
+                " O endereço de e-mail institucional é utilizado como meio de identificação de alunos vinculados à Unifatec. Isso permite garantir que apenas membros da faculdade tenham acesso aos serviços oferecidos pelo aplicativo."
             ),
         )
 
