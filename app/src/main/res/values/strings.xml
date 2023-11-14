@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">Aluno</string>
-    <string name="google_maps_key">AIzaSyB0D8-P6-bJ6QqvFXZHXMRWknbTO6K5GgI</string>
+    <string name="google_maps_key">AIzaSyCDloToQ9QFZtC-ZoOeRm1FIafWJM8n4SU</string>
     <string name="default_notification_channel_id">fcm_default_channel</string>
 </resources>
