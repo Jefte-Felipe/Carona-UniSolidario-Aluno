@@ -32,7 +32,7 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun startCirclesAnimation() {
-        val circles = listOf(binding.imgCircleEnd, binding.imgCircleBottom)
+        val circles = listOf(binding.imgCircleEnd)
         circleAnimationUtil = CircleAnimationUtil(circles)
         circleAnimationUtil?.start()
     }

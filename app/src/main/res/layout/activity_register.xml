@@ -15,22 +15,13 @@
             android:id="@+id/imgCircleEnd"
             android:layout_width="250dp"
             android:layout_height="800dp"
+            android:rotation="360"
             android:scaleType="fitXY"
             android:translationY="40dp"
-            android:rotation="360"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toEndOf="@id/imgCircleBottom"
             app:srcCompat="@drawable/ic_circle_end" />
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/imgCircleBottom"
-            android:layout_width="200dp"
-            android:layout_height="180dp"
-            android:rotation="180"
-            android:scaleType="fitXY"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_circle_bottom" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -40,6 +31,7 @@
             android:text="Criar Conta"
             android:textColor="@color/green"
             android:textSize="30sp"
+            android:id="@+id/title_register"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -47,12 +39,12 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="700dp"
+            android:layout_height="750dp"
             android:orientation="vertical"
             android:padding="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/imgCircleBottom">
+            app:layout_constraintTop_toBottomOf="@id/title_register">
 
             <TextView
                 android:layout_width="match_parent"
@@ -197,6 +189,32 @@
                 android:text="CADASTRE-SE"
                 android:textColor="#ffffff"
                 android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+                    android:id="@+id/marginTop"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:background="#707070" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold"
+                android:text="Por que precisamos dos seus dados?"
+                android:textColor="@color/green"
+                android:textSize="16sp" />
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
