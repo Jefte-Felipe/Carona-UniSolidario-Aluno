@@ -24,6 +24,7 @@
 
 
         <TextView
+            android:id="@+id/title_register"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="25dp"
@@ -31,7 +32,6 @@
             android:text="Criar Conta"
             android:textColor="@color/green"
             android:textSize="30sp"
-            android:id="@+id/title_register"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -197,9 +197,9 @@
                 android:orientation="horizontal">
 
                 <View
+                    android:id="@+id/marginTop"
                     android:layout_width="wrap_content"
                     android:layout_height="1dp"
-                    android:id="@+id/marginTop"
                     android:layout_gravity="center_vertical"
                     android:layout_weight="1"
                     android:background="#707070" />
@@ -207,14 +207,15 @@
             </LinearLayout>
 
             <TextView
+                android:id="@+id/quest_data"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
                 android:layout_marginTop="10dp"
-                android:textStyle="bold"
+                android:gravity="center"
                 android:text="Por que precisamos dos seus dados?"
                 android:textColor="@color/green"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:textStyle="bold" />
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

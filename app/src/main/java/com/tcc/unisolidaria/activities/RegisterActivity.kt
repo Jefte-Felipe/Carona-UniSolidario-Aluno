@@ -29,6 +29,14 @@ class RegisterActivity : AppCompatActivity() {
 
         binding.btnRegister.setOnClickListener { register() }
         startCirclesAnimation()
+
+        binding.questData.setOnClickListener {
+            lgpdData()
+        }
+    }
+
+    private fun lgpdData() {
+
     }
 
     private fun startCirclesAnimation() {
