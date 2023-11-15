@@ -30,15 +30,15 @@ object RelativeTime : Application() {
         } else if (diff < 2 * MINUTE_MILLIS) {
             "Faz um minuto"
         } else if (diff < 50 * MINUTE_MILLIS) {
-            "Faz " + diff / MINUTE_MILLIS + " minutos"
+            "Faz" + diff / MINUTE_MILLIS + " minutos"
         } else if (diff < 90 * MINUTE_MILLIS) {
             "Faz uma hora"
         } else if (diff < 24 * HOUR_MILLIS) {
-            "Faz " + diff / HOUR_MILLIS + " horas"
+            "Faz" + diff / HOUR_MILLIS + " horas"
         } else if (diff < 48 * HOUR_MILLIS) {
             "Ontem"
         } else {
-            "Faz " + diff / DAY_MILLIS + " dias"
+            "Faz" + diff / DAY_MILLIS + " dias"
         }
     }
 
@@ -61,7 +61,7 @@ object RelativeTime : Application() {
         } else if (diff < 48 * HOUR_MILLIS) {
             "Ontem"
         } else {
-            "Faz " + diff / DAY_MILLIS + " dias"
+            "Faz" + diff / DAY_MILLIS + " dias"
         }
     }
 }
