@@ -93,7 +93,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Lugar de partida"
+                    android:text="Local de partida"
                     android:textStyle="bold"
                     android:textColor="@color/black"
                     android:textSize="17sp"/>
@@ -173,7 +173,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Tempo de viagem"
+                    android:text="Tempo da corrida"
                     android:textStyle="bold"
                     android:textColor="@color/black"
                     android:textSize="17sp"/>
