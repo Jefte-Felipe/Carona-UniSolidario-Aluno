@@ -15,7 +15,7 @@ import com.tcc.unisolidaria.R
 class NotificationHelper(base: Context) : ContextWrapper(base) {
 
     private val CHANNEL_ID = "com.tcc.unisolidaria"
-    private val CHANNEL_NAME = "Carona UniSolidaria"
+    private val CHANNEL_NAME = "Aluno"
     private var manager: NotificationManager? = null
 
     init {
