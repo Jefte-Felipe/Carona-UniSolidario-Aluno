@@ -37,8 +37,8 @@ class HistoriesDetailActivity : AppCompatActivity() {
                 binding.textViewDestination.text = history?.destination
                 binding.textViewDate.text = RelativeTime.getTimeAgo(history?.timestamp!!, this@HistoriesDetailActivity)
                 binding.textViewPrice.text = "${String.format("%.1f", history?.price)}$"
-                binding.textViewMyCalification.text = "${history?.calificationToDriver}"
-                binding.textViewClientCalification.text = "${history?.calificationToClient}"
+                binding.textViewMyCalification.text = history?.calificationToDriver?.toString() ?: "Não foi informado pelo motorista"
+                binding.textViewClientCalification.text = history?.calificationToClient?.toString() ?: "Não foi informado"
                 binding.textViewTimeAndDistance.text = "${history?.time} Min - ${String.format("%.1f", history?.km)} Km"
                 getDriverInfo(history?.idDriver!!)
             }
