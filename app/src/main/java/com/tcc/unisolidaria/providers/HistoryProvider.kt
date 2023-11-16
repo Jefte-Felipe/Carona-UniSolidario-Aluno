@@ -21,11 +21,11 @@ class HistoryProvider {
         }
     }
 
-    fun getLastHistory(): Query { // CONSULTA COMPUESTA - INDICE
+    fun getLastHistory(): Query { // CONSULTA COMPOSTA - INDICE
         return db.whereEqualTo("idClient", authProvider.getId()).orderBy("timestamp", Query.Direction.DESCENDING).limit(1)
     }
 
-    fun getHistories(): Query { // CONSULTA COMPUESTA - INDICE
+    fun getHistories(): Query { // CONSULTA COMPOSTA - INDICE
         return db.whereEqualTo("idClient", authProvider.getId()).orderBy("timestamp", Query.Direction.DESCENDING)
     }
 
