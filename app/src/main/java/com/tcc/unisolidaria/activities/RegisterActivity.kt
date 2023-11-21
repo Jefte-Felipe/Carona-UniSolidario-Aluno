@@ -72,14 +72,14 @@ class RegisterActivity : AppCompatActivity() {
                         if (it.isSuccessful) {
                             Toast.makeText(
                                 this@RegisterActivity,
-                                "Registro bem-sucedido",
+                                "Cadastro realizado com sucesso",
                                 Toast.LENGTH_SHORT
                             ).show()
                             goToMap()
                         } else {
                             Toast.makeText(
                                 this@RegisterActivity,
-                                "Ocorreu um erro Dados do usuário armazenados ${it.exception.toString()}",
+                                "Ops, ocorreu uma falha ao salvar dados ${it.exception.toString()}",
                                 Toast.LENGTH_SHORT
                             ).show()
                             Log.d("FIREBASE", "Error: ${it.exception.toString()}")
