@@ -113,7 +113,7 @@ class ProfileActivity : AppCompatActivity() {
             Toast.makeText(this, ImagePicker.getError(data), Toast.LENGTH_LONG).show()
         }
         else {
-            Toast.makeText(this, "Tarefa cancelada", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "Atividade cancelada", Toast.LENGTH_LONG).show()
         }
 
     }
