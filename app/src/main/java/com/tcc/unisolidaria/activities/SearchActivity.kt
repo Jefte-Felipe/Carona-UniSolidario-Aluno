@@ -86,7 +86,7 @@ class SearchActivity : AppCompatActivity() {
         map.put("title", "PEDIDO DE VIAGEM")
         map.put(
             "body",
-            "Um cliente está solicitando uma viagem para " +
+            "Um aluno está solicitando uma corrida para " +
                     "${String.format("%.1f",extraDistance)}km y " +
                     "${String.format("%.1f", extraTime)}Min"
         )
