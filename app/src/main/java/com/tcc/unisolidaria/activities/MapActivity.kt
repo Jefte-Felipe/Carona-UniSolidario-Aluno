@@ -174,33 +174,21 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback, Listener {
                             }
                         }
                     }
+                    // CRIAMOS UM NOVO PLACAR PARA O MOTORISTA CONECTADO
+                    val driverLatLng = LatLng(location.latitude, location.longitude)
+                    val marker = googleMap?.addMarker(
+                        MarkerOptions().position(driverLatLng).title("Motorista disponível").icon(
+                            BitmapDescriptorFactory.fromResource(R.drawable.icon_car)
+                        )
+                    )
 
-                    // Retrieve the driver's email from Firestore using the documentID
-                    driverProvider.getDriver(documentID)
-                        .addOnSuccessListener { documentSnapshot ->
-                            if (documentSnapshot.exists()) {
-                                val driverEmail = documentSnapshot.getString("email")
-                                if (driverEmail != null) {
-                                    // CRIAMOS UM NOVO PLACAR PARA O MOTORISTA CONECTADO
-                                    val driverLatLng = LatLng(location.latitude, location.longitude)
-                                    val marker = googleMap?.addMarker(
-                                        MarkerOptions().position(driverLatLng)
-                                            .title("Email do Motorista: $driverEmail")
-                                            .icon(BitmapDescriptorFactory.fromResource(R.drawable.icon_car))
-                                    )
-                                    marker?.tag = documentID
-                                    driverMarkers.add(marker!!)
-                                    val dl = DriverLocation()
-                                    dl.id = documentID
-                                    driversLocation.add(dl)
-                                }
-                            }
-                        }
-                        .addOnFailureListener { exception ->
-                            Log.e("DriverProvider", "Error getting driver: ${exception.message}")
-                        }
+                    marker?.tag = documentID
+                    driverMarkers.add(marker!!)
+
+                    val dl = DriverLocation()
+                    dl.id = documentID
+                    driversLocation.add(dl)
                 }
-
 
                 override fun onKeyExited(documentID: String) {
                     for (marker in driverMarkers) {
