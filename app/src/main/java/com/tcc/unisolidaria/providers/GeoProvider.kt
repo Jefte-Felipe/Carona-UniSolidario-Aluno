@@ -21,6 +21,7 @@ class GeoProvider {
         geoFirestore.setLocation(idDriver, GeoPoint(position.latitude, position.longitude))
     }
 
+    //Atraves dessa consulta permite achar uma lista de motoristas na região
     fun getNearbyDrivers(position: LatLng, radius: Double): GeoQuery{
         val query = geoFirestore.queryAtLocation(GeoPoint(position.latitude, position.longitude), radius)
         query.removeAllListeners()
