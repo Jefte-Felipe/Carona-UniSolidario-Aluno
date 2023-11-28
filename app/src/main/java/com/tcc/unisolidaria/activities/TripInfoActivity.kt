@@ -106,7 +106,7 @@ class TripInfoActivity : AppCompatActivity(), OnMapReadyCallback, Listener, Dire
             startActivity(i)
         }
         else {
-            Toast.makeText(this, "Você deve selecionar a origem e o destino", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "Você deve selecionar o local de partida e o de destino", Toast.LENGTH_LONG).show()
         }
 
     }
@@ -115,7 +115,7 @@ class TripInfoActivity : AppCompatActivity(), OnMapReadyCallback, Listener, Dire
 
         configProvider.getPrices().addOnSuccessListener { document ->
             if (document.exists()) {
-                val prices = document.toObject(Prices::class.java) // DOCUMENTO CON LA INFORMACION
+                val prices = document.toObject(Prices::class.java)
 
                 val totalDistance = distance * prices?.km!! // VALOR POR KM
                 Log.d("PRICES", "totalDistance: $totalDistance")
