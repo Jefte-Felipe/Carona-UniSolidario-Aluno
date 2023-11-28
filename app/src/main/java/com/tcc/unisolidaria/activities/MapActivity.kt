@@ -174,7 +174,7 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback, Listener {
                             }
                         }
                     }
-                    // CRIAMOS UM NOVO PLACAR PARA O MOTORISTA CONECTADO
+                    //UM NOVO MARCADOR PARA O MOTORISTA CONECTADO
                     val driverLatLng = LatLng(location.latitude, location.longitude)
                     val marker = googleMap?.addMarker(
                         MarkerOptions().position(driverLatLng).title("Motorista disponível").icon(
@@ -191,6 +191,7 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback, Listener {
                 }
 
                 override fun onKeyExited(documentID: String) {
+                    //Saber qual motorista se desconectou e qual vamos eliminar da lista de motorista
                     for (marker in driverMarkers) {
                         if (marker.tag != null) {
                             if (marker.tag == documentID) {
