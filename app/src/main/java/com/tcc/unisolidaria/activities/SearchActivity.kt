@@ -55,12 +55,14 @@ class SearchActivity : AppCompatActivity() {
     private var limitRadius = 20
 
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySearchBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        window.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS)
+        window.setFlags(
+            WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+            WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
+        )
 
         // EXTRAS
         extraOriginName = intent.getStringExtra("origin")!!
@@ -85,7 +87,7 @@ class SearchActivity : AppCompatActivity() {
         map.put(
             "body",
             "Um aluno está solicitando uma corrida para " +
-                    "${String.format("%.1f",extraDistance)}km y " +
+                    "${String.format("%.1f", extraDistance)}km y " +
                     "${String.format("%.1f", extraTime)}Min"
         )
         map.put("idBooking", authProvider.getId())
@@ -97,20 +99,30 @@ class SearchActivity : AppCompatActivity() {
             data = map
         )
 
-        notificationProvider.sendNotification(body).enqueue(object: Callback<FCMResponse> {
+        notificationProvider.sendNotification(body).enqueue(object : Callback<FCMResponse> {
             override fun onResponse(call: Call<FCMResponse>, response: Response<FCMResponse>) {
                 if (response.body() != null) {
 
                     if (response.body()!!.success == 1) {
-                        Toast.makeText(this@SearchActivity, "A notificação foi enviada", Toast.LENGTH_LONG).show()
-                    }
-                    else {
-                        Toast.makeText(this@SearchActivity, "Não foi possível enviar notificação", Toast.LENGTH_LONG).show()
+                        Toast.makeText(
+                            this@SearchActivity,
+                            "A notificação foi enviada",
+                            Toast.LENGTH_LONG
+                        ).show()
+                    } else {
+                        Toast.makeText(
+                            this@SearchActivity,
+                            "Não foi possível enviar notificação",
+                            Toast.LENGTH_LONG
+                        ).show()
                     }
 
-                }
-                else {
-                    Toast.makeText(this@SearchActivity, "ocorreu um erro ao enviar a notificação", Toast.LENGTH_LONG).show()
+                } else {
+                    Toast.makeText(
+                        this@SearchActivity,
+                        "ocorreu um erro ao enviar a notificação",
+                        Toast.LENGTH_LONG
+                    ).show()
                 }
             }
 
@@ -135,9 +147,9 @@ class SearchActivity : AppCompatActivity() {
                     Toast.makeText(this@SearchActivity, "Viagem aceita", Toast.LENGTH_SHORT).show()
                     listenerBooking?.remove()
                     goToMapTrip()
-                }
-                else if (booking?.status == "cancel") {
-                    Toast.makeText(this@SearchActivity, "Viagem cancelada", Toast.LENGTH_SHORT).show()
+                } else if (booking?.status == "cancel") {
+                    Toast.makeText(this@SearchActivity, "Viagem cancelada", Toast.LENGTH_SHORT)
+                        .show()
                     listenerBooking?.remove()
                     goToMap()
                 }
@@ -175,14 +187,15 @@ class SearchActivity : AppCompatActivity() {
 
         bookingProvider.create(booking).addOnCompleteListener {
             if (it.isSuccessful) {
-                Toast.makeText(this@SearchActivity, "Dados de viagem criados", Toast.LENGTH_LONG).show()
-            }
-            else {
+                Toast.makeText(this@SearchActivity, "Dados de viagem criados", Toast.LENGTH_LONG)
+                    .show()
+            } else {
                 Toast.makeText(this@SearchActivity, "Erro ao criar dados", Toast.LENGTH_LONG).show()
             }
         }
     }
 
+    //O MOTORISTA FOI ENCONTRADO
     private fun getDriverInfo() {
 
         driverProvider.getDriver(idDriver).addOnSuccessListener { document ->
@@ -190,52 +203,52 @@ class SearchActivity : AppCompatActivity() {
                 driver = document.toObject(Driver::class.java)
                 sendNotification()
             }
-         }
+        }
 
     }
 
     private fun getClosestDriver() {
-        geoProvider.getNearbyDrivers(originLatLng!!, radius).addGeoQueryEventListener(object: GeoQueryEventListener {
+        geoProvider.getNearbyDrivers(originLatLng!!, radius)
+            .addGeoQueryEventListener(object : GeoQueryEventListener {
 
-            override fun onKeyEntered(documentID: String, location: GeoPoint) {
-                if (!isDriverFound) {
-                    isDriverFound = true
-                    idDriver = documentID
-                    getDriverInfo()
-                    Log.d("FIRESTORE", "motorista id: $idDriver")
-                    driverLatLng = LatLng(location.latitude, location.longitude)
-                    binding.textViewSearch.text = "MOTORISTA ENCONTRADO\nESPERANDO RESPONDER"
-                    createBooking(documentID)
-                }
-            }
-
-            override fun onKeyExited(documentID: String) {
-
-            }
-
-            override fun onKeyMoved(documentID: String, location: GeoPoint) {
-
-            }
-
-            override fun onGeoQueryError(exception: Exception) {
-
-            }
-
-            override fun onGeoQueryReady() { // FINALIZAR PESQUISA
-                if (!isDriverFound) {
-                    radius = radius + 0.2
-
-                    if (radius > limitRadius) {
-                        binding.textViewSearch.text = "NENHUM MOTORISTA FOI ENCONTRADO"
-                        return
-                    }
-                    else {
-                        getClosestDriver()
+                override fun onKeyEntered(documentID: String, location: GeoPoint) {
+                    if (!isDriverFound) {
+                        isDriverFound = true
+                        idDriver = documentID
+                        getDriverInfo()
+                        Log.d("FIRESTORE", "motorista id: $idDriver")
+                        driverLatLng = LatLng(location.latitude, location.longitude)
+                        binding.textViewSearch.text = "MOTORISTA ENCONTRADO\nESPERANDO RESPONDER"
+                        createBooking(documentID)
                     }
                 }
-            }
 
-        })
+                override fun onKeyExited(documentID: String) {
+
+                }
+
+                override fun onKeyMoved(documentID: String, location: GeoPoint) {
+
+                }
+
+                override fun onGeoQueryError(exception: Exception) {
+
+                }
+
+                override fun onGeoQueryReady() { // FINALIZAR PESQUISA
+                    if (!isDriverFound) {
+                        radius = radius + 0.2
+
+                        if (radius > limitRadius) {
+                            binding.textViewSearch.text = "NENHUM MOTORISTA FOI ENCONTRADO"
+                            return
+                        } else {
+                            getClosestDriver()
+                        }
+                    }
+                }
+
+            })
     }
 
     override fun onDestroy() {
