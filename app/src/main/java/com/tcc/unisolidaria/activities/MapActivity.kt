@@ -160,6 +160,7 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback, Listener {
 
         if (myLocationLatLng == null) return
 
+        //Pesquisa motoristas num raio de 30KM
         geoProvider.getNearbyDrivers(myLocationLatLng!!, 30.0)
             .addGeoQueryEventListener(object : GeoQueryEventListener {
 
@@ -308,7 +309,7 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback, Listener {
         instanceAutocompleteDestination()
     }
 
-
+    //Limite da pesquisa + Verificar se e mesmo
     private fun limitSearch() {
         val northSide = SphericalUtil.computeOffset(myLocationLatLng, 5000.0, 0.0)
         val southSide = SphericalUtil.computeOffset(myLocationLatLng, 5000.0, 180.0)
