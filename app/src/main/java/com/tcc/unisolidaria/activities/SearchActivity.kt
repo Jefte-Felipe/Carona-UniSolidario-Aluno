@@ -46,9 +46,7 @@ class SearchActivity : AppCompatActivity() {
     private val driverProvider = DriverProvider()
 
 
-    // PESQUISA DE MOTORISTA
-
-    //Teste aumentar distancia da corrida
+    // PESQUISA DE MOTORISTA ATRAVES DO RADIUS
     private var radius = 0.2
     private var idDriver = ""
     private var driver: Driver? = null
