@@ -71,7 +71,7 @@ class LoginActivity : AppCompatActivity() {
         }
         
         if (password.isEmpty()) {
-            Toast.makeText(this, "Coloque sua senha", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Digite sua senha", Toast.LENGTH_SHORT).show()
             return false
         }
         
