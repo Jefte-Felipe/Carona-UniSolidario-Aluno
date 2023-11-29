@@ -311,8 +311,8 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback, Listener {
 
     //Limite da pesquisa + Verificar se e mesmo
     private fun limitSearch() {
-        val northSide = SphericalUtil.computeOffset(myLocationLatLng, 5000.0, 0.0)
-        val southSide = SphericalUtil.computeOffset(myLocationLatLng, 5000.0, 180.0)
+        val northSide = SphericalUtil.computeOffset(myLocationLatLng, 15000.0, 0.0)
+        val southSide = SphericalUtil.computeOffset(myLocationLatLng, 15000.0, 180.0)
 
         autocompleteOrigin?.setLocationBias(RectangularBounds.newInstance(southSide, northSide))
         autocompleteDestination?.setLocationBias(
