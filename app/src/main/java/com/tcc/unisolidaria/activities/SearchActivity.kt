@@ -207,7 +207,10 @@ class SearchActivity : AppCompatActivity() {
 
     }
 
+
     private fun getClosestDriver() {
+        // Isso é chamado quando a geoconsulta inicial é concluída
+        // Se nenhum driver for encontrado dentro do raio atual, aumente o raio e continue a busca
         geoProvider.getNearbyDrivers(originLatLng!!, radius)
             .addGeoQueryEventListener(object : GeoQueryEventListener {
 
