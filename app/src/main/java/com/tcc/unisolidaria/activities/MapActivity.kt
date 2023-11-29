@@ -310,7 +310,7 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback, Listener {
         instanceAutocompleteDestination()
     }
 
-    //Limite da pesquisa + Verificar se e mesmo
+    //Limitar a pesquisa de preenchimento automatico de locais de origin e destino
     private fun limitSearch() {
         val northSide = SphericalUtil.computeOffset(myLocationLatLng, 15000.0, 0.0)
         val southSide = SphericalUtil.computeOffset(myLocationLatLng, 15000.0, 180.0)
