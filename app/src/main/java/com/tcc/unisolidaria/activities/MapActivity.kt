@@ -115,19 +115,19 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback, Listener {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
                 when {
                     permission.getOrDefault(Manifest.permission.ACCESS_FINE_LOCATION, false) -> {
-                        Log.d("LOCALIZACION", "Permissão concedida")
+                        Log.d("LOCALIZACAO", "Permissão concedida")
                         easyWayLocation?.startLocation()
 
                     }
 
                     permission.getOrDefault(Manifest.permission.ACCESS_COARSE_LOCATION, false) -> {
-                        Log.d("LOCALIZACION", "Permissão concedida com limitação")
+                        Log.d("LOCALIZACAO", "Permissão concedida com limitação")
                         easyWayLocation?.startLocation()
 
                     }
 
                     else -> {
-                        Log.d("LOCALIZACION", "Permissão não concedida")
+                        Log.d("LOCALIZACAO", "Permissão não concedida")
                     }
                 }
             }

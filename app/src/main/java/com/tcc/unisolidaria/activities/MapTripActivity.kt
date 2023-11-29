@@ -112,18 +112,18 @@ class MapTripActivity : AppCompatActivity(), OnMapReadyCallback, Listener,
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
                 when {
                     permission.getOrDefault(Manifest.permission.ACCESS_FINE_LOCATION, false) -> {
-                        Log.d("LOCALIZACION", "Permissão concedida")
+                        Log.d("LOCALIZACAO", "Permissão concedida")
 
 
                     }
 
                     permission.getOrDefault(Manifest.permission.ACCESS_COARSE_LOCATION, false) -> {
-                        Log.d("LOCALIZACION", "Permissão concedida com limitação")
+                        Log.d("LOCALIZACAO", "Permissão concedida com limitação")
 
                     }
 
                     else -> {
-                        Log.d("LOCALIZACION", "Permisão não concedida")
+                        Log.d("LOCALIZACAO", "Permisão não concedida")
                     }
                 }
             }

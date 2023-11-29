@@ -82,10 +82,10 @@ class TripInfoActivity : AppCompatActivity(), OnMapReadyCallback, Listener, Dire
         binding.textViewOrigin.text = extraOriginName
         binding.textViewDestination.text = extraDestinationName
 
-        Log.d("LOCALIZACION", "Origin lat: ${originLatLng?.latitude}")
-        Log.d("LOCALIZACION", "Origin lng: ${originLatLng?.longitude}")
-        Log.d("LOCALIZACION", "Destination lat: ${destinationLatLng?.latitude}")
-        Log.d("LOCALIZACION", "Destination lng: ${destinationLatLng?.longitude}")
+        Log.d("LOCALIZACAO", "Origin lat: ${originLatLng?.latitude}")
+        Log.d("LOCALIZACAO", "Origin lng: ${originLatLng?.longitude}")
+        Log.d("LOCALIZACAO", "Destination lat: ${destinationLatLng?.latitude}")
+        Log.d("LOCALIZACAO", "Destination lng: ${destinationLatLng?.longitude}")
 
         binding.imageViewBack.setOnClickListener { finish() }
         binding.btnConfirmRequest.setOnClickListener { goToSearchDriver() }
