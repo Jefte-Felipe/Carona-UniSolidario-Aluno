@@ -272,6 +272,7 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback, Listener {
         return position
     }
 
+    //Controla o icone central do usuario
     private fun onCameraMove() {
         googleMap?.setOnCameraIdleListener {
             try {
